@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>点々エディッタ ver.21</title>
-<link rel="icon" href="pageicon.png" type="image/png">
+<title>点々エディッタ ver.18.75</title>
 <style>
 :root{
   --bg:#0a0e1a;--panel:#111827;--panel2:#1a2235;--accent:#10b981;--cyan:#06b6d4;
@@ -109,181 +108,15 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
 .lut-chip.active{border-color:#fff;transform:scale(1.2)}
 
 @media(max-width:600px){.wrap{padding:11px;border-radius:12px}.cgrid{grid-template-columns:1fr}.mode-cards{grid-template-columns:repeat(3,1fr)}.mood-grid{grid-template-columns:repeat(3,1fr)}}
-
-#loginOverlay{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px}
-#loginOverlay.hidden{display:none}
-.lcard{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:30px 28px 24px;width:100%;max-width:400px;box-shadow:0 32px 64px rgba(0,0,0,.7)}
-.llogo{text-align:center;margin-bottom:22px}
-.ldots{display:flex;gap:5px;justify-content:center;margin-bottom:10px}
-.ldots span{width:9px;height:9px;border-radius:50%;background:var(--sub);opacity:.3}
-.ldots span:nth-child(3){opacity:.6;background:var(--accent)}
-.ldots span:nth-child(4){opacity:1;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-.llogo h2{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.llogo p{font-size:.78rem;color:var(--sub);margin-top:4px}
-.atabs{display:flex;gap:3px;margin-bottom:18px;background:var(--ctrl);padding:3px;border-radius:9px}
-.atab{flex:1;padding:8px 6px;border:none;border-radius:7px;background:transparent;color:var(--sub);cursor:pointer;font-weight:700;font-size:.8rem;transition:all .18s}
-.atab.act{background:linear-gradient(135deg,var(--accent),var(--cyan));color:#000}
-.lf{display:flex;flex-direction:column;gap:5px;margin-bottom:13px}
-.lf label{font-size:.74rem;color:#a0b0cc;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-.lf input{padding:9px 11px;border:1px solid var(--border);border-radius:8px;background:var(--ctrl);color:var(--text);font-size:.85rem;outline:none;transition:border-color .15s}
-.lf input:focus{border-color:var(--accent)}
-.lhint{font-size:.72rem;margin-top:3px;min-height:1.1em}
-.lhint.ok{color:#10b981}.lhint.err{color:#f43f5e}.lhint.muted{color:var(--sub)}
-.btn-auth{width:100%;padding:11px;font-size:.88rem;font-weight:700;border:none;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#000;cursor:pointer;transition:opacity .15s;margin-top:4px}
-.btn-auth:hover{opacity:.88}.btn-auth:disabled{opacity:.35;cursor:not-allowed}
-.tos-link{display:block;text-align:center;font-size:.74rem;color:var(--sub);margin-top:12px;text-decoration:none;border-top:1px solid var(--border);padding-top:10px}
-.tos-link:hover{color:var(--accent)}
-#aerr{font-size:.8rem;text-align:center;margin-top:10px;color:#f43f5e;min-height:1.2em}
-#appBar{width:100%;max-width:1200px;display:none;align-items:center;gap:10px;padding:8px 12px;background:var(--panel);border-radius:12px;border:1px solid var(--border);margin-bottom:10px}
-.logo-t{font-size:.9rem;font-weight:900;flex:1;background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.upill{display:flex;align-items:center;gap:6px;padding:4px 10px;background:var(--ctrl);border:1px solid var(--border);border-radius:20px;font-size:.76rem;color:var(--sub)}
-.upill .av{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--cyan));color:#000;font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.btb{font-size:.74rem;padding:5px 10px;border:1px solid var(--border);border-radius:7px;background:transparent;color:var(--sub);cursor:pointer;transition:all .15s;white-space:nowrap;min-width:unset}
-.btb:hover{border-color:var(--accent);color:var(--accent)}
-.btb.dng:hover{border-color:var(--red);color:var(--red)}
-#savesDrawer{width:100%;max-width:1200px;display:none;background:var(--panel);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
-.sdr-hdr{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
-.sdr-hdr h3{font-size:.82rem;font-weight:700;color:var(--text);flex:1}
-.cnt-b{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;padding:0 5px;background:var(--ctrl);border-radius:20px;font-size:.68rem;font-weight:700;color:var(--sub)}
-.chv{font-size:.8rem;color:var(--sub);transition:transform .2s}
-.sdr-hdr.open .chv{transform:rotate(180deg)}
-.sdr-body{display:none;padding:10px 12px 12px}
-.sdr-body.open{display:block}
-.sv-empty{text-align:center;padding:16px;color:var(--sub);font-size:.8rem}
-.sv-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--ctrl);border-radius:9px;border:1px solid var(--border);margin-bottom:6px}
-.sv-item:last-child{margin-bottom:0}
-.sv-ico{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.sv-body{flex:1;min-width:0}
-.sv-name{font-size:.8rem;font-weight:700;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sv-meta{font-size:.68rem;color:var(--sub);margin-top:1px}
-.sv-exp{font-size:.67rem;padding:2px 7px;border-radius:20px;flex-shrink:0;font-weight:700}
-.sv-exp.ok{background:rgba(16,185,129,.15);color:var(--accent)}
-.sv-exp.warn{background:rgba(245,158,11,.15);color:var(--amber)}
-.sv-exp.dead{background:rgba(244,63,94,.1);color:var(--red)}
-.sv-acts{display:flex;gap:4px}
-.sv-acts button{font-size:.7rem;padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--sub);cursor:pointer;min-width:unset;flex:none}
-.sv-acts button:hover{border-color:var(--accent);color:var(--accent)}
-.sv-acts .db:hover{border-color:var(--red);color:var(--red)}
-.btn-svnow{font-size:.78rem;padding:7px 12px;border:1px solid var(--accent);border-radius:8px;background:rgba(16,185,129,.08);color:var(--accent);cursor:pointer;font-weight:700;flex:none;min-width:unset}
-.btn-svnow:hover{background:rgba(16,185,129,.18)}
-.btn-svnow:disabled{opacity:.35;cursor:not-allowed}
-.mdbg{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
-.mdbg.hidden{display:none}
-.mdbox{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;width:100%;max-width:340px}
-.mdbox h4{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:8px}
-.mdbox p{font-size:.8rem;color:var(--sub);margin-bottom:14px;line-height:1.6}
-.mdbox input{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:7px;background:var(--ctrl);color:var(--text);font-size:.84rem;outline:none;margin-bottom:12px}
-.mdbox input:focus{border-color:var(--accent)}
-.md-btns{display:flex;gap:7px}
-.md-btns button{flex:1;padding:9px;font-size:.8rem;font-weight:700;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text);cursor:pointer;min-width:unset}
-.md-btns .cb{background:linear-gradient(135deg,var(--accent),var(--cyan));border-color:var(--accent);color:#000}
-.md-btns .xb{background:var(--red);border-color:var(--red);color:#fff}
-
-
-#accMd .warn-box{background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.3);border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:.78rem;color:#f87171;line-height:1.6}
-#accMd input{border-color:var(--border)}
-#accMd input:focus{border-color:var(--red)}
-
 </style>
 </head>
 <body>
 
-<div id="loginOverlay">
-  <div class="lcard">
-    <div class="llogo">
-      <div class="ldots"><span></span><span></span><span></span><span></span><span></span></div>
-      <h2>点々エディッタ</h2>
-      <p>from mikanjyusu3</p>
-    </div>
-    <div class="atabs">
-      <button class="atab act" id="tabL" onclick="showATab('l')">ログイン</button>
-      <button class="atab" id="tabR" onclick="showATab('r')">新規登録</button>
-    </div>
-    <div id="formL">
-      <div class="lf"><label>ユーザー名</label><input id="lN" type="text" placeholder="ユーザー名" autocomplete="username"></div>
-      <div class="lf"><label>パスワード</label><input id="lP" type="password" placeholder="パスワード" autocomplete="current-password"></div>
-      <button class="btn-auth" onclick="doLogin()">ログイン</button>
-    </div>
-    <div id="formR" style="display:none">
-      <div class="lf">
-        <label>ユーザー名（2〜20文字）</label>
-        <input id="rN" type="text" placeholder="使いたい名前" autocomplete="username" oninput="chkName()">
-        <div class="lhint" id="nHint"></div>
-      </div>
-      <div class="lf">
-        <label>パスワード（6文字以上）</label>
-        <input id="rP" type="password" placeholder="パスワードを設定" autocomplete="new-password" oninput="chkPass()">
-        <div class="lhint" id="pHint"></div>
-      </div>
-      <div class="lf"><label>パスワード（確認）</label><input id="rP2" type="password" placeholder="もう一度入力" autocomplete="new-password"></div>
-      <button class="btn-auth" id="rBtn" onclick="doRegister()">アカウントを作成</button>
-    </div>
-    <div id="aerr"></div>
-    <a href="利用規約.ver.1.html" target="_blank" class="tos-link">📄利用規約を読む</a>
-  </div>
-</div>
-
-<div id="appBar">
-  <span class="logo-t">点々エディッタ ver.21</span>
-  <div class="upill">
-    <div class="av" id="avTxt"></div>
-    <span id="uND"></span>
-  </div>
-  <button class="btb" onclick="openSD()">💾 データ管理 (<span id="sCnt">0</span>)</button>
-  <button class="btb dng" onclick="showLO()">ログアウト</button>
-  <button class="btb dng" onclick="showAccMd()">🗑アカウント削除</button>
-</div>
-
-<div id="savesDrawer">
-  <div class="sdr-hdr" id="sdrHdr" onclick="toggleSD()">
-    <h3>📁 保存済みデータ</h3>
-    <span class="cnt-b" id="sCntB">0</span>
-    <button class="btn-svnow" id="btnSvNow" onclick="event.stopPropagation();openSvMd()" disabled>＋ 現在のデータを保存</button>
-    <span class="chv">▼</span>
-  </div>
-  <div class="sdr-body" id="sdrBody">
-    <div class="sv-empty" id="svEmpty">まだ保存されたデータがありません</div>
-    <div id="svList"></div>
-  </div>
-</div>
-
-<div class="mdbg hidden" id="svMd">
-  <div class="mdbox">
-    <h4>データを保存</h4>
-    <p>名前をつけて保存します。最大5件・1週間保持。5件を超えると最も古いものが自動削除されます。</p>
-    <input id="svNmI" type="text" placeholder="例: 猫の輪郭アート" maxlength="30">
-    <div class="md-btns">
-      <button onclick="closeSvMd()">キャンセル</button>
-      <button class="cb" onclick="confirmSv()">保存する</button>
-    </div>
-  </div>
-</div>
-
-<div class="mdbg hidden" id="loMd">
-  <div class="mdbox">
-    <h4>ログアウトしますか？</h4>
-    <p>保存済みデータは次回ログイン時に復元できます。</p>
-    <div class="md-btns">
-      <button onclick="closeLO()">キャンセル</button>
-      <button class="xb" onclick="doLogout()">ログアウト</button>
-    </div>
-  </div>
-</div>
-
-<div class="mdbg hidden" id="delMd">
-  <div class="mdbox">
-    <h4>削除しますか？</h4>
-    <p id="delMsg"></p>
-    <div class="md-btns">
-      <button onclick="closeDelMd()">キャンセル</button>
-      <button class="xb" onclick="confirmDel()">削除する</button>
-    </div>
-  </div>
-</div>
-
 <div class="hdr">
-  <h1>点々エディッタ ver.21</h1>
-  <p>from mikanjyusu3</p>
+  <img src="ロゴver.18.5.png" alt="画像" style="position: absolute; top: -15px; left: -20px; width: 225px; height: auto; z-index: 9999;">
+  <h1>点々エディッタ ver.18.75</h1>
+  <p>for mikanjyusu3</p>
+  <a href="利用規約.ver.1.html" target="_blank" class="tos-link">📄 利用規約を読む</a>
 </div>
 
 <div class="tabs">
@@ -321,8 +154,8 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
 
     <div class="cg"><label>③ 輪郭検知アルゴリズム</label>
       <select id="edgeAlgo">
-        <option value="ultraEdge" selected>超輪郭（Sobel+Laplacian）★</option>
-        <option value="canny">Canny風（多段階）★★</option>
+        <option value="ultraEdge" selected>超輪郭★</option>
+        <option value="canny">Canny風★★</option>
         <option value="dog">DoG（差分ガウシアン）</option>
         <option value="structure">構造線（テンサー）</option>
         <option value="depth">深度感輪郭</option>
@@ -344,7 +177,7 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
     <div class="cg"><label>④ カラー設定</label>
       <select id="colorMode">
         <option value="outlineColor" selected>輪郭カラー</option>
-        <option value="hyperColor">超カラー再現（誤差拡散）</option>
+        <option value="hyperColor">超カラー再現</option>
         <option value="color">通常カラー</option>
         <option value="mono">白黒</option>
         <option value="black">単色（黒）</option>
@@ -436,9 +269,9 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
     </div>
 
     <div class="btn-row">
-      <button id="restartBtn" disabled>🔄再生成</button>
-      <button id="saveBtn" disabled class="btn-red">💾保存</button>
-      <button id="copyBtn" disabled class="btn-green">📋データコピー</button>
+      <button id="restartBtn" disabled>⦿再生成</button>
+      <button id="saveBtn" disabled class="btn-red">保存</button>
+      <button id="copyBtn" disabled class="btn-green">データをクリップボードにコピー</button>
     </div>
   </div>
 
@@ -451,7 +284,7 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
 
   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center">
     <button id="hqRunBtn" disabled class="btn-green">高画質化を実行</button>
-    <button id="hqSaveBtn" disabled class="btn-red">💾保存</button>
+    <button id="hqSaveBtn" disabled class="btn-red">保存</button>
     <button onclick="resetHQ()" style="background:var(--ctrl);color:var(--text);flex:none;min-width:90px">↩ リセット</button>
     <button onclick="applyPreset()" class="btn-purple btn-sm">おすすめ設定</button>
     <button id="compareToggle" onclick="toggleCompare()" disabled style="background:var(--ctrl);color:var(--text);flex:none;min-width:100px">比較ON</button>
@@ -529,7 +362,7 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
       <div class="r2"><input type="range" id="grainStr" min="0" max="50" value="0" step="1"><input type="number" id="grainStrN" min="0" max="50" value="0" step="1"></div>
     </div>
 
-    <div class="hqc"><h4>⑧ カラーグレーディング </h4>
+    <div class="hqc"><h4>⑧ カラーグレーディング</h4>
       <label style="font-size:.72rem;color:var(--sub);display:block;margin-bottom:4px">LUTプリセット</label>
       <select id="lutMode" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;background:var(--ctrl);color:var(--text);font-size:.78rem">
         <option value="none" selected>なし</option>
@@ -541,7 +374,7 @@ button:disabled{background:var(--ctrl);color:var(--sub);cursor:not-allowed;trans
         <option value="arctic">アークティック（冷色）</option>
         <option value="golden">ゴールデン（黄金）</option>
         <option value="neon">ネオン（蛍光）</option>
-        <option value="bw_contrast">B&amp;Wハイコントラスト</option>
+        <option value="bw_contrast">⬛ B&amp;Wハイコントラスト</option>
         <option value="infrared">赤外線風</option>
       </select>
       <label style="font-size:.72rem;color:var(--sub);display:block;margin-top:6px;margin-bottom:2px">適用強度</label>
@@ -712,7 +545,7 @@ function UB(){const cw=$('cw');if($('bgMode').value==='t'){cw.classList.add('che
 
 $('imgLoad').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>loadSrc(ev.target.result);r.readAsDataURL(f);});
 $('restartBtn').addEventListener('click',()=>{if(curImg)process(curImg);});
-// saveBtn handled by auth system$('copyBtn').addEventListener('click',copyData);
+$('saveBtn').addEventListener('click',saveArt);$('copyBtn').addEventListener('click',copyData);
 document.addEventListener('paste',e=>{for(const item of(e.clipboardData?.items||[])){if(item.type.startsWith('image/')){const r=new FileReader();r.onload=ev=>loadSrc(ev.target.result);r.readAsDataURL(item.getAsFile());e.preventDefault();break;}}});
 function loadSrc(src){const img=new Image();img.onload=()=>{curImg=img;$('restartBtn').disabled=false;process(img);};img.src=src;}
 
@@ -751,12 +584,7 @@ function process(img){
 
   const draw=[...allPts];shuffle(draw);
   $('status').innerText=`解析完了: ${allPts.length}個 → プロット中...`;
-  animate(draw,step,()=>{
-    $('status').innerText='総ドット数: '+allPts.length+'個';
-    ['copyBtn','saveBtn','hqRunBtn'].forEach(id=>$(id).disabled=false);
-    // auth hook: update save button when dots finish
-    if(typeof onDotsReady==='function') onDotsReady();
-  });
+  animate(draw,step,()=>{$('status').innerText=`総ドット数: ${allPts.length}個`;['copyBtn','saveBtn','hqRunBtn'].forEach(id=>$(id).disabled=false);});
 }
 
 function mkC(w,h){const c=document.createElement('canvas');c.width=w;c.height=h;return c;}
@@ -1178,7 +1006,7 @@ async function runHQ(){
   setHQProg('トーンカーブ...',92);await sleep(10);
   const lR=buildLUT(curves.rgb),lRr=buildLUT(curves.r),lGg=buildLUT(curves.g),lBb=buildLUT(curves.b);
   if(!lR.every((v,i)=>v===i)||!lRr.every((v,i)=>v===i)||!lGg.every((v,i)=>v===i)||!lBb.every((v,i)=>v===i)){let d=hqCtx.getImageData(0,0,outW,outH);d=applyToneCurves(d,lR,lRr,lGg,lBb);hqCtx.putImageData(d,0,0);}
-  setHQProg(`完了！ ${outW}×${outH}px`,100);
+  setHQProg(` 完了！ ${outW}×${outH}px`,100);
   $('hq-info').innerText=`出力: ${outW}×${outH}px（${factor}x）`;
   $('hqRunBtn').disabled=false;$('hqSaveBtn').disabled=false;$('compareToggle').disabled=false;
   drawHistogram(hqCanvas);
@@ -1276,7 +1104,7 @@ function applyColorAdj(imgD,co,br,sa,hdr,sh){
 function applyToneCurves(imgD,lutRGB,lutR,lutG,lutB){const{data:d,width:w,height:h}=imgD,out=new Uint8ClampedArray(d);for(let i=0;i<d.length;i+=4){out[i]=lutR[lutRGB[d[i]]];out[i+1]=lutG[lutRGB[d[i+1]]];out[i+2]=lutB[lutRGB[d[i+2]]];out[i+3]=d[i+3];}return new ImageData(out,w,h);}
 
 function saveHQ(){if(hqCanvas.width<2)return;const a=document.createElement('a');a.download='tenten_hq.png';a.href=hqCanvas.toDataURL('image/png');a.click();}
-function resetHQ(){hqCtx.clearRect(0,0,hqCanvas.width,hqCanvas.height);$('hqSaveBtn').disabled=true;$('compareToggle').disabled=true;compareActive=false;$('compareToggle').innerText='🔀 比較ON';$('hq-info').innerText='';setHQProg('リセットしました',null);}
+function resetHQ(){hqCtx.clearRect(0,0,hqCanvas.width,hqCanvas.height);$('hqSaveBtn').disabled=true;$('compareToggle').disabled=true;compareActive=false;$('compareToggle').innerText='比較ON';$('hq-info').innerText='';setHQProg('リセットしました',null);}
 function applyPreset(){
   $('upMode').value='2';$('interp').value='lanczos';
   $('denoiseMode').value='bilateral';$('denoiseR').value=$('denoiseRN').value=2;$('denoiseEdge').value=$('denoiseEdgeN').value=70;
@@ -1292,319 +1120,6 @@ $('hqRunBtn').addEventListener('click',runHQ);
 $('hqSaveBtn').addEventListener('click',saveHQ);
 
 setTimeout(()=>{resizeCurveCanvas();const hc=$('histCanvas');hc.width=Math.max(100,hc.parentElement.offsetWidth-24);drawHistogram();},150);
-
-const MAX_SAVES = 5;
-const WEEK_MS   = 7 * 24 * 60 * 60 * 1000;
-let currentUser = null;
-let nameTimer   = null;
-let pendingDel  = null;
-
-function onDotsReady() {
-  if (currentUser) {
-    $('btnSvNow').disabled = false;
-    renderSaves();
-  }
-}
-
-function djb2(s) {
-  var h = 5381;
-  for (var i = 0; i < s.length; i++) h = (h * 33) ^ s.charCodeAt(i);
-  return (h >>> 0).toString(36);
-}
-
-function getU()    { try { return JSON.parse(localStorage.getItem('tt_users') || '{}');  } catch(e) { return {}; } }
-function setU(u)   { localStorage.setItem('tt_users', JSON.stringify(u)); }
-function getS(u)   { try { return JSON.parse(localStorage.getItem('tt_sv_' + u) || '[]'); } catch(e) { return []; } }
-function setS(u,a) { localStorage.setItem('tt_sv_' + u, JSON.stringify(a)); }
-function getSess() { try { return JSON.parse(localStorage.getItem('tt_sess') || 'null'); } catch(e) { return null; } }
-function setSess(d){ d ? localStorage.setItem('tt_sess', JSON.stringify(d)) : localStorage.removeItem('tt_sess'); }
-
-function showATab(t) {
-  $('tabL').classList.toggle('act', t === 'l');
-  $('tabR').classList.toggle('act', t === 'r');
-  $('formL').style.display = t === 'l' ? 'block' : 'none';
-  $('formR').style.display = t === 'r' ? 'block' : 'none';
-  $('aerr').textContent = '';
-}
-function setAErr(msg, ok) {
-  var e = $('aerr');
-  e.textContent = msg;
-  e.style.color = ok ? '#10b981' : '#f43f5e';
-}
-
-function chkName() {
-  var n = $('rN').value.trim();
-  var h = $('nHint');
-  if (nameTimer) clearTimeout(nameTimer);
-  if (!n) { h.className = 'lhint'; h.textContent = ''; return; }
-  if (n.length < 2)  { h.className = 'lhint err';   h.textContent = '2文字以上で入力してください'; return; }
-  if (n.length > 20) { h.className = 'lhint err';   h.textContent = '20文字以内にしてください'; return; }
-  h.className = 'lhint muted'; h.textContent = '確認中...';
-  nameTimer = setTimeout(function() {
-    var u = getU();
-    if (u[n.toLowerCase()]) {
-      h.className = 'lhint err'; h.textContent = '⚠ この名前はすでに使われています';
-    } else {
-      h.className = 'lhint ok';  h.textContent = '✓ この名前は使えます';
-    }
-  }, 380);
-}
-function chkPass() {
-  var p = $('rP').value;
-  var h = $('pHint');
-  if (!p) { h.textContent = ''; return; }
-  if (p.length < 6)       { h.className = 'lhint err';   h.textContent = '6文字以上にしてください'; }
-  else if (p.length < 10) { h.className = 'lhint muted'; h.textContent = '強度: 普通'; }
-  else                    { h.className = 'lhint ok';    h.textContent = '強度: 強い'; }
-}
-
-function doRegister() {
-  var n  = $('rN').value.trim();
-  var p  = $('rP').value;
-  var p2 = $('rP2').value;
-  if (n.length < 2 || n.length > 20) { setAErr('ユーザー名は2〜20文字にしてください'); return; }
-  if (p.length < 6)  { setAErr('パスワードは6文字以上にしてください'); return; }
-  if (p !== p2)      { setAErr('パスワードが一致しません'); return; }
-  var u = getU();
-  if (u[n.toLowerCase()]) { setAErr('この名前はすでに使われています'); return; }
-  u[n.toLowerCase()] = { display: n, hash: djb2(p), createdAt: Date.now() };
-  setU(u);
-  setSess({ username: n });
-  currentUser = n;
-  setAErr('✓ アカウントを作成しました！', true);
-  setTimeout(enterApp, 600);
-}
-
-function doLogin() {
-  var n = $('lN').value.trim();
-  var p = $('lP').value;
-  if (!n || !p) { setAErr('ユーザー名とパスワードを入力してください'); return; }
-  var u   = getU();
-  var usr = u[n.toLowerCase()];
-  if (!usr || usr.hash !== djb2(p)) { setAErr('ユーザー名またはパスワードが違います'); return; }
-  setSess({ username: usr.display });
-  currentUser = usr.display;
-  enterApp();
-}
-
-function enterApp() {
-  $('loginOverlay').classList.add('hidden');
-  $('appBar').style.display    = 'flex';
-  $('savesDrawer').style.display = 'block';
-  $('uND').textContent  = currentUser;
-  $('avTxt').textContent = currentUser.slice(0, 2).toUpperCase();
-  renderSaves();
-}
-
-function showLO()  { $('loMd').classList.remove('hidden'); }
-function closeLO() { $('loMd').classList.add('hidden'); }
-function doLogout() {
-  setSess(null);
-  currentUser = null;
-  closeLO();
-  $('loginOverlay').classList.remove('hidden');
-  $('appBar').style.display      = 'none';
-  $('savesDrawer').style.display = 'none';
-  $('lN').value = ''; $('lP').value = ''; $('aerr').textContent = '';
-}
-
-function openSD()   { $('sdrBody').classList.add('open');    $('sdrHdr').classList.add('open'); }
-function toggleSD() { $('sdrBody').classList.toggle('open'); $('sdrHdr').classList.toggle('open'); }
-
-function renderSaves() {
-  if (!currentUser) return;
-  var now = Date.now();
-  var sv  = getS(currentUser).filter(function(s) { return s.expiresAt > now; });
-  setS(currentUser, sv);
-
-  $('sCnt').textContent  = sv.length;
-  $('sCntB').textContent = sv.length;
-  $('btnSvNow').disabled = !allPts.length;
-
-  var list  = $('svList');
-  var empty = $('svEmpty');
-  list.innerHTML = '';
-
-  if (!sv.length) { empty.style.display = 'block'; return; }
-  empty.style.display = 'none';
-
-  sv.slice().reverse().forEach(function(s) {
-    var ms   = s.expiresAt - now;
-    var days = Math.floor(ms / 86400000);
-    var hrs  = Math.floor((ms % 86400000) / 3600000);
-    var et   = days > 0 ? (days + '日後に消去') : hrs > 0 ? (hrs + '時間後') : '間もなく消去';
-    var ec   = days >= 3 ? 'ok' : days >= 1 ? 'warn' : 'dead';
-    var dt   = new Date(s.savedAt).toLocaleDateString('ja-JP', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
-
-    var item = document.createElement('div');
-    item.className = 'sv-item';
-
-    var ico = document.createElement('div');
-    ico.className = 'sv-ico'; ico.textContent = '🎨';
-
-    var body = document.createElement('div'); body.className = 'sv-body';
-    var nm   = document.createElement('div'); nm.className = 'sv-name'; nm.textContent = s.name;
-    var mt   = document.createElement('div'); mt.className = 'sv-meta';
-    mt.textContent = s.pointCount.toLocaleString() + '点 · ' + dt + ' · ' + (s.mode || '—');
-    body.appendChild(nm); body.appendChild(mt);
-
-    var exp = document.createElement('span');
-    exp.className = 'sv-exp ' + ec; exp.textContent = et;
-
-    var acts   = document.createElement('div'); acts.className = 'sv-acts';
-    var btnLd  = document.createElement('button'); btnLd.textContent = '📂 読込';
-    var sid    = s.id;
-    btnLd.onclick = function() { loadSv(sid); };
-    var btnDl  = document.createElement('button'); btnDl.className = 'db'; btnDl.textContent = '🗑';
-    var sname  = s.name;
-    btnDl.onclick = function() { promptDel(sid, sname); };
-    acts.appendChild(btnLd); acts.appendChild(btnDl);
-
-    item.appendChild(ico); item.appendChild(body); item.appendChild(exp); item.appendChild(acts);
-    list.appendChild(item);
-  });
-}
-
-function openSvMd() {
-  if (!allPts.length) { alert('先にドットアートを生成してください'); return; }
-  $('svNmI').value = '';
-  $('svMd').classList.remove('hidden');
-  setTimeout(function() { $('svNmI').focus(); }, 60);
-}
-function closeSvMd() { $('svMd').classList.add('hidden'); }
-
-function confirmSv() {
-  var nm = $('svNmI').value.trim();
-  if (!nm) return;
-  var now = Date.now();
-  var sv  = getS(currentUser).filter(function(s) { return s.expiresAt > now; });
-  while (sv.length >= MAX_SAVES) sv.shift();
-  var modeEl = document.querySelector('.mc.active .mn');
-  var mode   = modeEl ? modeEl.textContent : '—';
-  var id     = 'sv' + now.toString(36);
-  sv.push({
-    id: id,
-    name: nm,
-    savedAt: now,
-    expiresAt: now + WEEK_MS,
-    pointCount: allPts.length,
-    mode: mode,
-    canvasData: mainCanvas.toDataURL('image/png')
-  });
-  setS(currentUser, sv);
-  closeSvMd();
-  renderSaves();
-  openSD();
-}
-
-function loadSv(id) {
-  var sv  = getS(currentUser);
-  var s   = sv.find(function(x) { return x.id === id; });
-  if (!s) return;
-  if (!s.canvasData) { alert('画像データが見つかりません'); return; }
-  var img = new Image();
-  img.onload = function() {
-    curImg = img;
-    $('restartBtn').disabled = false;
-    mainCanvas.width  = img.width;
-    mainCanvas.height = img.height;
-    mCtx.clearRect(0, 0, img.width, img.height);
-    mCtx.drawImage(img, 0, 0);
-    $('status').innerText = '「' + s.name + '」を復元しました（' + s.pointCount.toLocaleString() + '点）';
-    ['copyBtn','saveBtn','hqRunBtn'].forEach(function(i) { $(i).disabled = false; });
-  };
-  img.src = s.canvasData;
-}
-
-function promptDel(id, name) {
-  pendingDel = id;
-  $('delMsg').textContent = '「' + name + '」を削除します。取り消せません。';
-  $('delMd').classList.remove('hidden');
-}
-function closeDelMd() { $('delMd').classList.add('hidden'); pendingDel = null; }
-function confirmDel() {
-  if (!pendingDel) return;
-  var sv = getS(currentUser).filter(function(s) { return s.id !== pendingDel; });
-  setS(currentUser, sv);
-  closeDelMd();
-  renderSaves();
-}
-
-(function() {
-  var sb = $('saveBtn');
-  var fresh = sb.cloneNode(true);
-  sb.parentNode.replaceChild(fresh, sb);
-  fresh.addEventListener('click', function() {
-    if (!currentUser) { alert('ログインしてください'); return; }
-    openSvMd();
-  });
-})();
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeSvMd(); closeLO(); closeDelMd(); closeAccMd(); }
-  if (e.key === 'Enter') {
-    if (!$('loginOverlay').classList.contains('hidden')) {
-      if ($('formL').style.display !== 'none') doLogin(); else doRegister();
-      return;
-    }
-    if (!$('svMd').classList.contains('hidden')) { confirmSv(); return; }
-  }
-});
-
-(function() {
-  var sess = getSess();
-  if (sess && sess.username) {
-    var u   = getU();
-    var usr = u[sess.username.toLowerCase()];
-    if (usr) { currentUser = usr.display; enterApp(); return; }
-  }
-})();
-
-
-function showAccMd()  { $('accDelPass').value = ''; $('accMd').classList.remove('hidden'); setTimeout(function(){ $('accDelPass').focus(); }, 60); }
-function closeAccMd() { $('accMd').classList.add('hidden'); }
-
-function confirmAccDel() {
-  var pass = $('accDelPass').value;
-  if (!pass) { $('accDelPass').style.borderColor = '#f43f5e'; return; }
-  var u   = getU();
-  var usr = u[currentUser.toLowerCase()];
-  if (!usr || usr.hash !== djb2(pass)) {
-    $('accDelPass').value = '';
-    $('accDelPass').placeholder = '⚠ パスワードが違います';
-    $('accDelPass').style.borderColor = '#f43f5e';
-    return;
-  }
-  localStorage.removeItem('tt_sv_' + currentUser);
-  delete u[currentUser.toLowerCase()];
-  setU(u);
-  setSess(null);
-  currentUser = null;
-  closeAccMd();
-  $('loginOverlay').classList.remove('hidden');
-  $('appBar').style.display      = 'none';
-  $('savesDrawer').style.display = 'none';
-  $('lN').value = ''; $('lP').value = ''; $('aerr').textContent = '';
-  setAErr('アカウントを削除しました。またのご利用をお待ちしています。', true);
-}
-
 </script>
-
-<div class="mdbg hidden" id="accMd">
-  <div class="mdbox">
-    <h4>⚠️ アカウントを削除</h4>
-    <div class="warn-box">
-      この操作は取り消せません。<br>
-      アカウントと保存済みデータがすべて完全に削除されます。
-    </div>
-    <p>確認のため、パスワードを入力してください。</p>
-    <input id="accDelPass" type="password" placeholder="パスワード">
-    <div class="md-btns">
-      <button onclick="closeAccMd()">キャンセル</button>
-      <button class="xb" onclick="confirmAccDel()">完全に削除する</button>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
